@@ -1,0 +1,9 @@
+fn main$:
+    let n = 3
+    let label =
+        if n >= 10:
+            "big"
+        else:
+            "small"
+    assert_eq! label "small"
+    println! "{label}"

@@ -1,0 +1,12 @@
+trait Speak
+    fn speak (&self) -> String
+
+struct Dog
+
+impl Speak for Dog
+    fn speak (&self) -> String:
+        String.from "woof"
+
+fn main$:
+    let d = Dog
+    println! "{}" (d <- speak$)

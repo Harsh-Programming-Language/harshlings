@@ -1,0 +1,22 @@
+// layout10
+//
+// A block's opener says how its entries end. A header that ends itself --
+// `struct`, `enum`, `impl`, `trait`, `mod`, `extern` -- needs no mark: what
+// follows deeper can only be the body. This one still wears one.
+//
+// Run `hrs run -- hint layout10` for a hint.
+
+// I AM NOT DONE
+
+struct Counter
+    n: i32
+
+impl Counter:
+    fn bump (&mut self):
+        self <- n += 1
+
+fn main$:
+    let mut c = Counter\ n = 0
+    c <- bump$
+    assert_eq! (c <- n) 1
+    println! "{}" (c <- n)

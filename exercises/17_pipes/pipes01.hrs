@@ -1,0 +1,16 @@
+// pipes01
+//
+// `x |> f` hands `x` to `f`. Give `scale` its factor with a pipe so that
+// `double` is a function waiting for one more value.
+//
+// Run `hrs run -- hint pipes01` for a hint.
+
+// I AM NOT DONE
+
+fn scale (factor: i32) (x: i32) -> i32:
+    factor * x
+
+fn main$:
+    let double = scale
+    assert_eq! (double 21) 42
+    println! "{}" (double 21)

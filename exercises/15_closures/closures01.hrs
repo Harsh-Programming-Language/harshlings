@@ -1,0 +1,13 @@
+// closures01
+//
+// A closure with several statements takes the block form: `|x|:` with
+// the body indented beneath. This one tries to cram two statements
+// on the line.
+//
+// Run `hrs run -- hint closures01` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let describe = |n: i32| let doubled = n * 2; format! "{n} doubled is {doubled}"
+    println! "{}" (describe 21)

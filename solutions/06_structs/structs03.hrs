@@ -1,0 +1,5 @@
+struct Meters f64
+
+fn main$:
+    let d = Meters 5.5
+    println! "{} m" d.0

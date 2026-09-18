@@ -1,0 +1,7 @@
+fn first_digit s: &str -> Option<u32>:
+    let Some c = s <- chars$ <- next$ else:
+        return None
+    c <- to_digit 10
+
+fn main$:
+    println! "{:?} {:?}" (first_digit "7up") (first_digit "")

@@ -1,0 +1,8 @@
+fn describe x: Option<i32> -> String:
+    match x:
+        Some n => format! "the number {n}"
+        None => String.from "nothing"
+
+fn main$:
+    assert_eq! (describe (Some 7)) "the number 7"
+    println! "{}" (describe None)

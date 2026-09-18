@@ -1,0 +1,8 @@
+fn add (x: i32) (y: i32) -> i32:
+    x + y
+
+fn main$:
+    let a = [2, 3, 4]
+    let res = add a[0] a[1]
+    assert_eq! res 5
+    println! "{res}"

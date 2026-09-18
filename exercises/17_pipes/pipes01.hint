@@ -1,0 +1,2 @@
+`2 |> scale` fills `factor` and leaves `x`: the result is a closure that
+takes one `i32`. Harsh knows `scale` takes two because it is declared here.

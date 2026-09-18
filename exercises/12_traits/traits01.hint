@@ -1,0 +1,7 @@
+Add
+
+    impl Speak for Dog:
+        fn speak (&self) -> String:
+            String.from "woof"
+
+— the trait's block gave the signature without a body; the impl gives the body.

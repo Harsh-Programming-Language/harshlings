@@ -1,0 +1,13 @@
+enum Light
+    Red
+    Yellow
+    Green
+
+fn action light: Light -> &'static str:
+    match light:
+        Light.Red => "stop"
+        Light.Yellow => "slow down"
+        Light.Green => "go"
+
+fn main$:
+    println! "{}" (action Light.Yellow)

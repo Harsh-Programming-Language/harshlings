@@ -1,0 +1,7 @@
+fn length s: &String -> usize:
+    s <- len$
+
+fn main$:
+    let s = String.from "harsh"
+    let n = length (&s)
+    println! "{s} has {n} letters"

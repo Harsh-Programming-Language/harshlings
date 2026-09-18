@@ -1,0 +1,2 @@
+`(text <- trim$) |> shout` — parentheses make the chain one atom; the same
+rule that isolates an expression as an argument.

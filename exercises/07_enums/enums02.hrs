@@ -1,0 +1,16 @@
+// enums02
+//
+// A pattern is an application: `Some n` takes the payload out. Complete
+// the match so `describe` names the number.
+//
+// Run `hrs run -- hint enums02` for a hint.
+
+// I AM NOT DONE
+
+fn describe x: Option<i32> -> String:
+    match x:
+        None => String.from "nothing"
+
+fn main$:
+    assert_eq! (describe (Some 7)) "the number 7"
+    println! "{}" (describe None)

@@ -1,0 +1,16 @@
+// ownership02
+//
+// Passing a `String` to a function moves it in. `length` only needs to
+// look at the string; change its signature and the call so `s` survives.
+//
+// Run `hrs run -- hint ownership02` for a hint.
+
+// I AM NOT DONE
+
+fn length s: String -> usize:
+    s <- len$
+
+fn main$:
+    let s = String.from "harsh"
+    let n = length s
+    println! "{s} has {n} letters"

@@ -1,0 +1,17 @@
+// pipes04
+//
+// A pipe hands a value to a function: `x |> f`. Give it fewer values than
+// the function takes and it waits for the rest; give it more and Harsh
+// refuses before the compiler ever runs. One value too many here.
+//
+// Run `hrs run -- hint pipes04` for a hint.
+
+// I AM NOT DONE
+
+fn scale (factor: i32) (x: i32) -> i32:
+    factor * x
+
+fn main$:
+    let y = 2 3 4 |> scale
+    assert_eq! y 6
+    println! "{y}"

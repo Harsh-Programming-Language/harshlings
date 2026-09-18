@@ -1,0 +1,14 @@
+// layout04
+//
+// Applied to nothing is `$` — on a function, and on a method just the
+// same. Two method calls here are spelled with `()`.
+//
+// Run `hrs run -- hint layout04` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let s = String.from "  harsh  "
+    let t = s <- trim() <- to_string()
+    assert_eq! t "harsh"
+    println! "{t}"

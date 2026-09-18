@@ -1,0 +1,17 @@
+// patterns01
+//
+// A record is taken apart with the same mark that builds it. This
+// pattern is missing that mark.
+//
+// Run `hrs run -- hint patterns01` for a hint.
+
+// I AM NOT DONE
+
+struct Point
+    x: i32
+    y: i32
+
+fn main$:
+    let p = Point\ x = 3, y = 4
+    let Point x, y = p
+    println! "{}" (x * x + y * y)

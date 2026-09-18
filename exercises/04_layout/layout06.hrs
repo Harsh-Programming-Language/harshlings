@@ -1,0 +1,18 @@
+// layout06
+//
+// Inside an application, a space before `[` is refused: Harsh will not
+// guess whether you meant the element or an index of the result. Two
+// spellings work; use the shorter one.
+//
+// Run `hrs run -- hint layout06` for a hint.
+
+// I AM NOT DONE
+
+fn add (x: i32) (y: i32) -> i32:
+    x + y
+
+fn main$:
+    let a = [2, 3, 4]
+    let res = add a [0] a [1]
+    assert_eq! res 5
+    println! "{res}"

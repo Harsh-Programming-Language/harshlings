@@ -1,0 +1,14 @@
+// structs03
+//
+// A tuple struct is its name applied to its field types, and a value is
+// the name applied to values. Both lines here use Rust's parentheses.
+//
+// Run `hrs run -- hint structs03` for a hint.
+
+// I AM NOT DONE
+
+struct Meters(f64)
+
+fn main$:
+    let d = Meters(5.5)
+    println! "{} m" d.0

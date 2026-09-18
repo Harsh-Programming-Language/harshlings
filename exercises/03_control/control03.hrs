@@ -1,0 +1,20 @@
+// control03
+//
+// A `loop` is an expression: `break` can carry its value out. Make
+// `first_square_over_50` return that value instead of 0.
+//
+// Run `hrs run -- hint control03` for a hint.
+
+// I AM NOT DONE
+
+fn first_square_over_50$ -> i32:
+    let mut n = 1
+    loop:
+        if n * n > 50:
+            break
+        n += 1
+    0
+
+fn main$:
+    assert_eq! (first_square_over_50$) 64
+    println! "{}" (first_square_over_50$)

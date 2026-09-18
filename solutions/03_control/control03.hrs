@@ -1,0 +1,10 @@
+fn first_square_over_50$ -> i32:
+    let mut n = 1
+    loop:
+        if n * n > 50:
+            break n * n
+        n += 1
+
+fn main$:
+    assert_eq! (first_square_over_50$) 64
+    println! "{}" (first_square_over_50$)

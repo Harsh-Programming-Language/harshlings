@@ -1,0 +1,2 @@
+`use std.collections.HashMap` and `HashMap.new$`: the dot walks a path —
+module, type, item. (The arrow `<-` is for reaching into a value.)

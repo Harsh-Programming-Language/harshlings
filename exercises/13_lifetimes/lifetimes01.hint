@@ -1,0 +1,2 @@
+`fn longer<'a> (a: &'a str) (b: &'a str) -> &'a str:` — one lifetime
+for both inputs and the output. Nothing about lifetimes is Harsh's own.

@@ -1,0 +1,3 @@
+Delete the commas. On their own lines, arms are separated by the line
+ending; a comma only separates arms that share one line
+(`match n: 0 => "none", _ => "many"`).

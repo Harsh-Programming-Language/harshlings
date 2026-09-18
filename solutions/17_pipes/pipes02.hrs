@@ -1,0 +1,8 @@
+fn shout s: &str -> String:
+    s <- to_uppercase$
+
+fn main$:
+    let text = "  harsh  "
+    let out = (text <- trim$) |> shout
+    assert_eq! out "HARSH"
+    println! "{out}"

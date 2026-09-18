@@ -1,0 +1,19 @@
+// generics01
+//
+// `largest` should work for any type that can be compared. Give it a
+// type parameter with the bound it needs.
+//
+// Run `hrs run -- hint generics01` for a hint.
+
+// I AM NOT DONE
+
+fn largest xs: &[i32] -> i32:
+    let mut best = xs[0]
+    for &x in xs:
+        if x > best:
+            best = x
+    best
+
+fn main$:
+    println! "{}" (largest (&[3, 9, 2]))
+    println! "{}" (largest (&[1.5, 0.5]))

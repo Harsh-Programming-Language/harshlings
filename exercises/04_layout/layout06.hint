@@ -1,0 +1,2 @@
+Written tight, an index is part of its atom: `add a[0] a[1]` passes two
+elements. (`add (a [0]) (a [1])` also works; `add a [0]` never does.)

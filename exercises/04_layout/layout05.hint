@@ -1,0 +1,2 @@
+The compiler says `usize` has no method `trim`: the arrow was applied to
+`len`'s result. Put the arrow inside the argument: `len (text <- trim$)`.

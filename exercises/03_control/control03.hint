@@ -1,0 +1,2 @@
+`break n * n` — and then the `loop` is the function's last expression, so
+the `0` goes.

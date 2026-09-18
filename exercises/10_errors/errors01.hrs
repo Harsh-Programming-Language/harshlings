@@ -1,0 +1,19 @@
+// errors01
+//
+// `?` hands an `Err` back to the caller. `parse_both` should return the
+// sum of two parsed numbers, or the first error. Use `?` twice.
+//
+// Run `hrs run -- hint errors01` for a hint.
+
+// I AM NOT DONE
+
+use std.num.ParseIntError
+
+fn parse_both (a: &str) (b: &str) -> Result<i32, ParseIntError>:
+    let x: i32 = a <- parse$
+    let y: i32 = b <- parse$
+    Ok (x + y)
+
+fn main$:
+    println! "{:?}" (parse_both "20" "22")
+    println! "{:?}" (parse_both "20" "x")

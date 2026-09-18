@@ -1,0 +1,4 @@
+`(Point\ x = 1, y = 2, msg)` is one literal with three fields — the list
+reads to the group's `)`, and the compiler says `Point` has no field `msg`.
+Give the literal its own parentheses so the tuple's comma is the tuple's:
+`((Point\ x = 1, y = 2), msg)`.

@@ -1,0 +1,14 @@
+// ownership01
+//
+// A `String` is owned: assigning it moves it, and the old name is gone.
+// Make this compile without changing the last two lines.
+//
+// Run `hrs run -- hint ownership01` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let s1 = String.from "hello"
+    let s2 = s1
+    println! "{s1}"
+    println! "{s2}"

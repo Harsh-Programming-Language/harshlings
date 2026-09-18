@@ -1,0 +1,3 @@
+Harsh refuses a line at a column no open block uses — it never silently
+guesses which block you meant. The body of `greet` starts at column 5, so
+every line of it does: put `hello <- to_string$ + name` under `let`.

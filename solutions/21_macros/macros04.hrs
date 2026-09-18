@@ -1,0 +1,10 @@
+macro_rules! pair {
+    ( $a:expr, $b:expr ) => { ($a, $b) };
+}
+
+fn main$:
+    let p = pair!\
+        1
+        2
+    assert_eq! p (1, 2)
+    println! "{p:?}"

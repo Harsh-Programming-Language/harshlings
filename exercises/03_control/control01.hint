@@ -1,0 +1,6 @@
+An `if` used as a value needs an `else`, at the same column as the `if`:
+
+    if n >= 10:
+        "big"
+    else:
+        "small"

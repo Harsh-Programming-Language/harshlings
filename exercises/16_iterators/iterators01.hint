@@ -1,0 +1,2 @@
+Add a link: `<- filter (|x| x % 2 == 0)` under the others, the arrow
+aligned. A closure is one argument in parentheses.

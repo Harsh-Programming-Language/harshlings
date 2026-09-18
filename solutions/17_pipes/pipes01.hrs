@@ -1,0 +1,7 @@
+fn scale (factor: i32) (x: i32) -> i32:
+    factor * x
+
+fn main$:
+    let double = 2 |> scale
+    assert_eq! (double 21) 42
+    println! "{}" (double 21)

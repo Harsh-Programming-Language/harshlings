@@ -1,0 +1,2 @@
+`struct Meters f64` declares; `Meters 5.5` builds — juxtaposition both
+times. `d.0` reads the field: a tuple index keeps its dot.

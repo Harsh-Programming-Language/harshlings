@@ -1,0 +1,2 @@
+`while let Some top = stack <- pop$:` with the body beneath — the
+pattern is an application, `Some top`, as in a `match`.

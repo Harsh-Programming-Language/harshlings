@@ -1,0 +1,5 @@
+fn main$:
+    let s = String.from "  harsh  "
+    let t = s <- trim$ <- to_string$
+    assert_eq! t "harsh"
+    println! "{t}"

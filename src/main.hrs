@@ -1,0 +1,230 @@
+// harshlings -- the runner. Written in Harsh, built by `hrs`.
+//
+//   hrs run                  the same as `watch`
+//   hrs run -- watch         run the first exercise still marked not done,
+//                            and again every time a file under exercises/ changes
+//   hrs run -- run NAME      run one exercise
+//   hrs run -- hint NAME     print its hint
+//   hrs run -- list          every exercise and whether it is done
+//
+// An exercise is done when its `// I AM NOT DONE` line is deleted and it
+// transpiles, compiles and runs without failing. Errors point at the `.hrs`
+// line, the way `hrs check` reports them.
+
+use std.env
+use std.fs
+use std.path.(Path, PathBuf)
+use std.process.Command
+use std.thread
+use std.time.(Duration, SystemTime)
+
+const MARKER: &str = "// I AM NOT DONE"
+
+struct Exercise
+    name: String
+    path: PathBuf
+
+fn exercises$ -> Vec<Exercise>:
+    let mut out = Vec.new$
+    let root = Path.new "exercises"
+    let mut topics: Vec<PathBuf> =
+        fs.read_dir root
+            <- expect "run harshlings from the repository root (no exercises/ here)"
+            <- filter_map (|e| e <- ok$)
+            <- map (|e| e <- path$)
+            <- filter (|p| p <- is_dir$)
+            <- collect$
+    topics <- sort$
+    for topic in topics:
+        let mut files: Vec<PathBuf> =
+            fs.read_dir (&topic)
+                <- unwrap$
+                <- filter_map (|e| e <- ok$)
+                <- map (|e| e <- path$)
+                <- filter (|p| p <- extension$ <- map_or
+                                                      false
+                                                      (|x| x == "hrs"))
+                <- collect$
+        files <- sort$
+        for path in files:
+            let name =
+                path <- file_stem$
+                     <- unwrap$
+                     <- to_string_lossy$
+                     <- to_string$
+            out <- push (Exercise\ name, path)
+    out
+
+fn is_done ex: &Exercise -> bool:
+    let src = fs.read_to_string (&ex <- path) <- unwrap_or_default$
+    !(src <- contains MARKER)
+
+// Transpile, compile and run one exercise. `hrs check`'s job, done here so
+// that a learner needs nothing but `hrs` and `rustc` on the PATH.
+fn attempt ex: &Exercise -> bool:
+    let out_dir = Path.new "target" <- join "harshlings"
+    fs.create_dir_all (&out_dir) <- unwrap$
+    let rs = out_dir <- join (format! "{}.rs" (ex <- name))
+    let bin = out_dir <- join (&ex <- name)
+
+    let map = out_dir <- join (format! "{}.map.json" (ex <- name))
+    let t = Command.new "hrs"
+        <- arg (&ex <- path)
+        <- arg "-o"
+        <- arg (&rs)
+        <- arg "--map"
+        <- arg (&map)
+        <- output$
+        <- expect "hrs is not on your PATH: run `cargo install harsh-lang` first"
+    if !(t <- status <- success$):
+        eprint! "{}" (String.from_utf8_lossy (&t <- stderr))
+        return false
+
+    // rustc, asked for JSON diagnostics, which hrs-remap puts back on the
+    // .hrs lines -- the same route `hrs check` takes.
+    let c = Command.new "rustc"
+        <- args (["--edition", "2021", "-A", "warnings", "--error-format=json"])
+        <- arg (&rs)
+        <- arg "-o"
+        <- arg (&bin)
+        <- output$
+        <- expect "rustc is not on your PATH: install Rust from https://rustup.rs"
+    if !(c <- status <- success$):
+        let stream: String =
+            String.from_utf8_lossy (&c <- stderr)
+                <- lines$
+                <- filter (|l| l <- starts_with "{")
+                <- map (|l| format! "{{\"reason\":\"compiler-message\",\"message\":{l}}}\n")
+                <- collect$
+        let mut remap = Command.new "hrs-remap"
+            <- arg "--map"
+            <- arg (&map)
+            <- stdin (std.process.Stdio.piped$)
+            <- stdout (std.process.Stdio.piped$)
+            <- spawn$
+            <- expect "hrs-remap is not on your PATH: run `cargo install harsh-lang`"
+        do:
+            use std.io.Write
+            let mut stdin =
+                remap <- stdin
+                      <- take$
+                      <- unwrap$
+            stdin <- write_all (stream <- as_bytes$) <- unwrap$
+        let out = remap <- wait_with_output$ <- unwrap$
+        let text = String.from_utf8_lossy (&out <- stdout) <- to_string$
+        let text =
+            text <- split "\nerror: aborting"
+                 <- next$
+                 <- unwrap_or ""
+                 <- to_string$
+        for line in text <- lines$:
+            if !(line <- starts_with "hrs: "):
+                eprintln! "{line}"
+        return false
+
+    let r =
+        Command.new (&bin)
+            <- output$
+            <- expect "could not run the exercise"
+    print! "{}" (String.from_utf8_lossy (&r <- stdout))
+    if !(r <- status <- success$):
+        // An assertion that did not hold, or a panic: the message is the
+        // exercise's, with the generated file's name put back to the .hrs.
+        let err = String.from_utf8_lossy (&r <- stderr) <- to_string$
+        let from = rs <- to_string_lossy$ <- to_string$
+        let to =
+            ex <- path
+               <- to_string_lossy$
+               <- to_string$
+        eprint! "{}" (err <- replace (&from) (&to))
+        return false
+    true
+
+fn header ex: &Exercise:
+    println!
+        "\n====== {} ({}) ======"
+        (ex <- name)
+        (ex <- path <- display$)
+
+fn run_one ex: &Exercise -> bool:
+    header ex
+    let ok = attempt ex
+    if ok && !(is_done ex):
+        println!
+            "\n✔ It runs. Delete the `{}` line to move on."
+            MARKER
+    else if ok:
+        println! "\n✔ Done."
+    else:
+        println!
+            "\n✘ Not yet. `hrs run -- hint {}` if you are stuck."
+            (ex <- name)
+    ok
+
+fn find_by_name name: &str -> Option<Exercise>:
+    exercises$ <- into_iter$ <- find (|e| e <- name == name)
+
+fn hint name: &str:
+    match find_by_name name:
+        None => eprintln! "no exercise named {name}"
+        Some ex =>
+            let path = ex <- path <- with_extension "hint"
+            match fs.read_to_string (&path):
+                Ok text => print! "{text}"
+                Err _ => println! "no hint for {name}"
+
+fn list$:
+    for ex in exercises$:
+        let mark = if is_done (&ex): "done" else: "    "
+        println! "{}  {}" mark (ex <- name)
+
+// The newest modification time under exercises/: what `watch` polls.
+fn newest$ -> SystemTime:
+    let mut t = SystemTime.UNIX_EPOCH
+    for ex in exercises$:
+        if let Ok m = fs.metadata (&ex <- path) <- and_then (|md| md <- modified$):
+            if m > t:
+                t = m
+    t
+
+fn watch$:
+    let mut last = newest$
+    loop:
+        let next = exercises$ <- into_iter$ <- find (|e| !(is_done e))
+        match next:
+            None =>
+                println! "\nEvery exercise is done. Well done!"
+                return
+            Some ex =>
+                let ok = run_one (&ex)
+                if ok && is_done (&ex):
+                    continue
+        // wait for a save
+        loop:
+            thread.sleep (Duration.from_millis 300)
+            let now = newest$
+            if now != last:
+                last = now
+                break
+
+fn main$:
+    let args: Vec<String> = env.args$ <- skip 1 <- collect$
+    let cmd =
+        args <- first$
+             <- map (|s| s <- as_str$)
+             <- unwrap_or "watch"
+    match cmd:
+        "watch" => watch$
+        "list" => list$
+        "hint" =>
+            match args <- get 1:
+                Some n => hint n
+                None => eprintln! "usage: hrs run -- hint NAME"
+        "run" =>
+            match args <- get 1:
+                Some n =>
+                    match find_by_name n:
+                        Some ex => do: run_one (&ex);
+                        None => eprintln! "no exercise named {n}"
+                None => eprintln! "usage: hrs run -- run NAME"
+        _ => eprintln! "usage: hrs run -- [watch | run NAME | hint NAME | list]"

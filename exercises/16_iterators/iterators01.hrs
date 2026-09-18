@@ -1,0 +1,17 @@
+// iterators01
+//
+// A chain of adaptors ends in a consumer. `evens` should collect the even
+// numbers; the chain is missing its `filter`.
+//
+// Run `hrs run -- hint iterators01` for a hint.
+
+// I AM NOT DONE
+
+fn evens xs: &[i32] -> Vec<i32>:
+    xs <- iter$
+       <- copied$
+       <- collect$
+
+fn main$:
+    assert_eq! (evens (&[1, 2, 3, 4])) ([2, 4])
+    println! "{:?}" (evens (&[5, 6, 7, 8]))

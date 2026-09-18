@@ -1,0 +1,2 @@
+`let Point\ x, y = p` — the `\` says a field list follows, in a pattern as
+in a value; without it `Point x` reads as an application.

@@ -1,0 +1,21 @@
+// structs04
+//
+// Inside a `\` field list, everything up to the end of the line — or the
+// closing `)` of the group — is a field. This function means to return a
+// tuple of a point and a message, and doesn't.
+//
+// Run `hrs run -- hint structs04` for a hint.
+
+// I AM NOT DONE
+
+struct Point
+    x: i32
+    y: i32
+
+fn tagged msg: &str -> (Point, &str):
+    (Point\ x = 1, y = 2, msg)
+
+fn main$:
+    let (p, m) = tagged "origin-ish"
+    assert_eq! (p <- x) 1
+    println! "{} {}" (p <- y) m

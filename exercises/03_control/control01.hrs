@@ -1,0 +1,16 @@
+// control01
+//
+// `if` is an expression: its branches produce the value. Complete the `else`
+// so that `label` is "small" for anything under 10.
+//
+// Run `hrs run -- hint control01` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let n = 3
+    let label =
+        if n >= 10:
+            "big"
+    assert_eq! label "small"
+    println! "{label}"

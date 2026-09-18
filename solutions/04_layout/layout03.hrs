@@ -1,0 +1,7 @@
+fn answer$ -> i32:
+    42
+
+fn main$:
+    let a = answer$
+    let s = String.new$
+    println! "{a} {s:?}"

@@ -1,0 +1,14 @@
+// lifetimes01
+//
+// A function returning a reference must say which input it borrows from.
+// Name the lifetime — the spelling is Rust's.
+//
+// Run `hrs run -- hint lifetimes01` for a hint.
+
+// I AM NOT DONE
+
+fn longer (a: &str) (b: &str) -> &str:
+    if a <- len$ >= b <- len$: a else: b
+
+fn main$:
+    println! "{}" (longer "harsh" "rust")

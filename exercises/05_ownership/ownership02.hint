@@ -1,0 +1,3 @@
+Borrow instead of moving: the parameter becomes `&String` (or `&str`) and
+the call passes `&s`. `&s` is an operator expression, so as an argument it
+is isolated: `length (&s)`.

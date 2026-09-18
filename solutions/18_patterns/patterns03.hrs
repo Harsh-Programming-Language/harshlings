@@ -1,0 +1,9 @@
+fn sign n: i32 -> &'static str:
+    match n:
+        0 => "zero"
+        x if x < 0 => "negative"
+        _ => "positive"
+
+fn main$:
+    assert_eq! (sign (-3)) "negative"
+    println! "{} {} {}" (sign (-3)) (sign 0) (sign 8)

@@ -1,0 +1,3 @@
+`answer()` reads as `answer` applied to the unit value — one argument, which
+`answer` does not take. Applied to nothing is `answer$`; the same for a
+method or a path: `String.new$`, `v <- len$`.

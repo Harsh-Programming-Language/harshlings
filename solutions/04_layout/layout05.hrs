@@ -1,0 +1,8 @@
+fn len s: &str -> usize:
+    s <- len$
+
+fn main$:
+    let text = "  harsh  "
+    let n = len (text <- trim$)
+    assert_eq! n 5
+    println! "{n}"

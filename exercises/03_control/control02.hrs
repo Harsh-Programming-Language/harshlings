@@ -1,0 +1,14 @@
+// control02
+//
+// `while let` runs as long as the pattern matches. Pop the stack until it
+// is empty, printing each value.
+//
+// Run `hrs run -- hint control02` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let mut stack = vec! [1, 2, 3]
+    let top = stack <- pop$
+    println! "{top:?}"
+    assert! (stack <- is_empty$)

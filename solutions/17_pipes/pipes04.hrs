@@ -1,0 +1,7 @@
+fn scale (factor: i32) (x: i32) -> i32:
+    factor * x
+
+fn main$:
+    let y = 2 3 |> scale
+    assert_eq! y 6
+    println! "{y}"

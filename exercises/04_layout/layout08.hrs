@@ -1,0 +1,17 @@
+// layout08
+//
+// `do:` opens a block that belongs to nothing — a scope, and a value.
+// `w` and `h` live only inside it, which is the point; one line below
+// forgets that.
+//
+// Run `hrs run -- hint layout08` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let area = do:
+        let w = 3
+        let h = 4
+        w * h
+    println! "{area}"
+    println! "{w}"

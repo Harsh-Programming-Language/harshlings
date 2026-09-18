@@ -1,0 +1,4 @@
+`v <- push 10` — a method applied to one argument, no parentheses. Three
+of those, or `let mut v = vec! [10, 20, 30]`.
+(The array in the assertion is isolated, `([10, 20, 30])`: brackets never
+apply, so an array passed as an argument needs its parentheses.)

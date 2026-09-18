@@ -1,0 +1,18 @@
+// layout05
+//
+// An application binds tighter than `<-`: `len text <- trim$` applies
+// `len` first and then calls `trim` on the number it returned. Make the
+// arrow act on `text` instead.
+//
+// Run `hrs run -- hint layout05` for a hint.
+
+// I AM NOT DONE
+
+fn len s: &str -> usize:
+    s <- len$
+
+fn main$:
+    let text = "  harsh  "
+    let n = len text <- trim$
+    assert_eq! n 5
+    println! "{n}"

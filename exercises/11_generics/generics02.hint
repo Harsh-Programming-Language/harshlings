@@ -1,0 +1,2 @@
+`impl<T> Pair<T>:` — the first `<T>` introduces the parameter, the second
+uses it. Rust's rule, unchanged; only the `:` is Harsh's.

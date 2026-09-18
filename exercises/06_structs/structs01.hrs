@@ -1,0 +1,16 @@
+// structs01
+//
+// A value of a record struct is the name, a `\`, and every field with `=`.
+// One field is missing here.
+//
+// Run `hrs run -- hint structs01` for a hint.
+
+// I AM NOT DONE
+
+struct Point
+    x: f64
+    y: f64
+
+fn main$:
+    let p = Point\ x = 1.5
+    println! "({}, {})" (p <- x) (p <- y)

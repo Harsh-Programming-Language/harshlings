@@ -1,0 +1,9 @@
+fn describe n: i32 -> &'static str:
+    match n:
+        0 => "none"
+        1 => "one"
+        _ => "many"
+
+fn main$:
+    assert_eq! (describe 1) "one"
+    println! "{}" (describe 5)

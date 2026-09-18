@@ -1,0 +1,2 @@
+`move ||` — the closure takes ownership of `v`. The compiler's message
+says exactly this: the closure may outlive the borrowed value.

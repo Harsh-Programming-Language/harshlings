@@ -1,0 +1,2 @@
+`"Ben" |> greet` fills the *first* parameter, the greeting. To fill the
+last one, pipe from the right: `greet <| "Ben"`.

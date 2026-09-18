@@ -1,0 +1,7 @@
+fn ping$ -> bool:
+    true
+
+fn main$:
+    let n = 1
+    if n == 1: ping$;
+    println! "done"

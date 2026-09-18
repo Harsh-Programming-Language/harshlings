@@ -1,0 +1,2 @@
+`Some n => format! "the number {n}"` — the variant applied to a name binds
+the payload; `format!` applies like a function, its string first.

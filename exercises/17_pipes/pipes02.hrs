@@ -1,0 +1,17 @@
+// pipes02
+//
+// A pipe's sides are atoms. `text <- trim$` is a chain, not an atom, so
+// it cannot go straight into `|>`. Isolate it.
+//
+// Run `hrs run -- hint pipes02` for a hint.
+
+// I AM NOT DONE
+
+fn shout s: &str -> String:
+    s <- to_uppercase$
+
+fn main$:
+    let text = "  harsh  "
+    let out = text <- trim$ |> shout
+    assert_eq! out "HARSH"
+    println! "{out}"

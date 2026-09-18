@@ -1,0 +1,16 @@
+// rc01
+//
+// Two owners of one value: `Rc`. `b` and `c` both want to share `a`.
+// `Rc.clone` makes a second handle, not a second value.
+//
+// Run `hrs run -- hint rc01` for a hint.
+
+// I AM NOT DONE
+
+use std.rc.Rc
+
+fn main$:
+    let a = Rc.new (String.from "shared")
+    let b = a
+    let c = a
+    println! "{b} {c} {}" (Rc.strong_count (&c))

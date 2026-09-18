@@ -1,0 +1,6 @@
+fn main$:
+    let area = do:
+        let w = 3
+        let h = 4
+        w * h
+    println! "{area}"

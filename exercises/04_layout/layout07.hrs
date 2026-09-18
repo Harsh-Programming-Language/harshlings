@@ -1,0 +1,17 @@
+// layout07
+//
+// A written `;` at the end of a block discards its value — and an `if`
+// used as a statement must produce `()` in both branches. One arm here
+// returns a `bool` by mistake.
+//
+// Run `hrs run -- hint layout07` for a hint.
+
+// I AM NOT DONE
+
+fn ping$ -> bool:
+    true
+
+fn main$:
+    let n = 1
+    if n == 1: ping$
+    println! "done"

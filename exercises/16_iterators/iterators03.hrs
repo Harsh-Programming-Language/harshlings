@@ -1,0 +1,17 @@
+// iterators03
+//
+// A chain of three or more links goes vertical, every `<-` under the
+// first. This one is legal on one line but hard to read; make it the
+// shape `hrs fmt` would give it, and make it compile: one link is wrong.
+//
+// Run `hrs run -- hint iterators03` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let words = ["apple", "banana", "cherry"]
+    let caps: Vec<String> =
+        words <- iter$
+              <- map (|w| w.to_uppercase$)
+              <- collect$
+    println! "{caps:?}"

@@ -1,0 +1,15 @@
+// modules01
+//
+// A path is walked with `.`, never `::`. Two paths here are spelled the
+// Rust way.
+//
+// Run `hrs run -- hint modules01` for a hint.
+
+// I AM NOT DONE
+
+use std::collections::HashMap
+
+fn main$:
+    let mut m = HashMap::new$
+    m <- insert "one" 1
+    println! "{:?}" (m <- get "one")

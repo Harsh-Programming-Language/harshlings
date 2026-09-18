@@ -1,0 +1,7 @@
+fn greet (greeting: &str) (name: &str) -> String:
+    format! "{greeting}, {name}!"
+
+fn main$:
+    let hello = greet <| "Ben"
+    assert_eq! (hello "Hello") "Hello, Ben!"
+    println! "{}" (hello "Bonjour")

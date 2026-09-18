@@ -1,0 +1,14 @@
+// macros02
+//
+// A `macro_rules!` definition: a matcher is a parameter group, a
+// transcriber is a block. This one is missing its transcriber's `do:`.
+//
+// Run `hrs run -- hint macros02` for a hint.
+
+// I AM NOT DONE
+
+macro_rules~ twice
+    ($x:expr) => $x * 2
+
+fn main$:
+    println! "{}" (twice~ 21)

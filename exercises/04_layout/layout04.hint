@@ -1,0 +1,2 @@
+`s <- trim$ <- to_string$` — `$` after each method name. `()` would pass
+the unit value as an argument, which `trim` does not take.

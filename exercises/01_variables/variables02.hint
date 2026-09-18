@@ -1,0 +1,2 @@
+`cannot assign twice to immutable variable` — the binding needs to be
+declared mutable where it is made: `let mut x = 1`.

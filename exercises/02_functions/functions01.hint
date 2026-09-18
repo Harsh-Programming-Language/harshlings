@@ -1,0 +1,4 @@
+`add` takes two arguments and got one. The arguments follow the function,
+separated by spaces, with no parentheses and no commas: `add 3 4`.
+(Parentheses would mean *one* argument: `add (3 4)` is a mistake.) Any two
+numbers that sum to 7 will do.

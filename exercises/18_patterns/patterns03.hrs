@@ -1,0 +1,17 @@
+// patterns03
+//
+// An arm can carry a guard: `pattern if condition => value`. Add one so
+// negative numbers are named.
+//
+// Run `hrs run -- hint patterns03` for a hint.
+
+// I AM NOT DONE
+
+fn sign n: i32 -> &'static str:
+    match n:
+        0 => "zero"
+        _ => "positive"
+
+fn main$:
+    assert_eq! (sign (-3)) "negative"
+    println! "{} {} {}" (sign (-3)) (sign 0) (sign 8)

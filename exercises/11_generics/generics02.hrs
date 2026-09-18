@@ -1,0 +1,20 @@
+// generics02
+//
+// A generic struct's `impl` block declares the parameter again, right
+// after `impl`. This one forgets to.
+//
+// Run `hrs run -- hint generics02` for a hint.
+
+// I AM NOT DONE
+
+struct Pair<T>
+    a: T
+    b: T
+
+impl Pair<T>
+    fn first (&self) -> &T:
+        &self <- a
+
+fn main$:
+    let p = Pair\ a = "x", b = "y"
+    println! "{}" (p <- first$)

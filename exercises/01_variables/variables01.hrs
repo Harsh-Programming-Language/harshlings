@@ -1,0 +1,11 @@
+// variables01
+//
+// A binding is made with `let`. Give `x` a value so that the program prints it.
+//
+// Run `hrs run -- hint variables01` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    x = 5
+    println! "x has the value {x}"

@@ -1,0 +1,3 @@
+`fn largest<T: PartialOrd + Copy> xs: &[T] -> T:` — the generics sit after
+the name, before the parameter, exactly as in Rust; the bare parameter and
+the body do not change.

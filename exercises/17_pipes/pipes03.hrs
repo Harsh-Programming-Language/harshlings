@@ -1,0 +1,16 @@
+// pipes03
+//
+// `<|` fills from the right. `greet` takes a greeting and a name; make
+// `hello` a function of the *greeting*, with the name already supplied.
+//
+// Run `hrs run -- hint pipes03` for a hint.
+
+// I AM NOT DONE
+
+fn greet (greeting: &str) (name: &str) -> String:
+    format! "{greeting}, {name}!"
+
+fn main$:
+    let hello = "Ben" |> greet
+    assert_eq! (hello "Hello") "Hello, Ben!"
+    println! "{}" (hello "Bonjour")

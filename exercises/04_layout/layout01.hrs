@@ -1,0 +1,15 @@
+// layout01
+//
+// In Harsh, where a line starts is what it belongs to. The last line of this
+// function is meant to be part of it. Fix its column.
+//
+// Run `hrs run -- hint layout01` for a hint.
+
+// I AM NOT DONE
+
+fn greet name: &str -> String:
+    let hello = "Hello, "
+  hello <- to_string$ + name
+
+fn main$:
+    println! "{}" (greet "Harsh")

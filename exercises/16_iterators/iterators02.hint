@@ -1,0 +1,3 @@
+`<- map (3 |> scale)` — `3 |> scale` fills `factor` and leaves `x`, which
+is what `map` will supply. Isolated in parentheses, as any argument that is
+more than one token.

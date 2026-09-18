@@ -1,0 +1,18 @@
+// layout02
+//
+// A `match` arm ends at the end of its line — nothing separates arms but the
+// newline. Something extra crept in here.
+//
+// Run `hrs run -- hint layout02` for a hint.
+
+// I AM NOT DONE
+
+fn describe n: i32 -> &'static str:
+    match n:
+        0 => "none",
+        1 => "one",
+        _ => "many"
+
+fn main$:
+    assert_eq! (describe 1) "one"
+    println! "{}" (describe 5)

@@ -1,0 +1,2 @@
+Every field must be given, in any order: `Point\ x = 1.5, y = 2.5` — or
+`Point\` with one `field = value` per line beneath.

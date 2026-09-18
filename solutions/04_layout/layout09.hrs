@@ -1,0 +1,5 @@
+fn twice (f: impl Fn i32 -> i32) -> i32:
+    f (f 1)
+
+fn main$:
+    println! "{}" (twice (|x| x + 3))

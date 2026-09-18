@@ -1,0 +1,3 @@
+The block's last line is its value; `w` and `h` end with the block, so
+the last `println!` cannot see `w`. Delete it — or print `w` inside the
+block, before `w * h`.

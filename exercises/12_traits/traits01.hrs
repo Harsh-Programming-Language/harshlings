@@ -1,0 +1,17 @@
+// traits01
+//
+// A trait is implemented with `impl Trait for Type:`, a block like any
+// other. `Dog` does not yet implement `Speak`.
+//
+// Run `hrs run -- hint traits01` for a hint.
+
+// I AM NOT DONE
+
+trait Speak
+    fn speak (&self) -> String
+
+struct Dog
+
+fn main$:
+    let d = Dog
+    println! "{}" (d <- speak$)

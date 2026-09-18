@@ -1,0 +1,3 @@
+`impl Counter` with the methods beneath it -- no `:`. Nothing but a name can
+follow `impl`, so the header ends itself, exactly as `struct Counter` does on
+the line above.

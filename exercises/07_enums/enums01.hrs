@@ -1,0 +1,20 @@
+// enums01
+//
+// A `match` must cover every variant. One is missing.
+//
+// Run `hrs run -- hint enums01` for a hint.
+
+// I AM NOT DONE
+
+enum Light
+    Red
+    Yellow
+    Green
+
+fn action light: Light -> &'static str:
+    match light:
+        Light.Red => "stop"
+        Light.Green => "go"
+
+fn main$:
+    println! "{}" (action Light.Yellow)

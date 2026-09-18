@@ -1,0 +1,4 @@
+fn main$:
+    let name = "Harsh"
+    let year = 2026
+    println! "{} since {}" name year

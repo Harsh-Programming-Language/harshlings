@@ -1,0 +1,9 @@
+use std.sync.mpsc
+use std.thread
+
+fn main$:
+    let (tx, rx) = mpsc.channel$
+    thread.spawn (move || tx <- send 42 <- unwrap$)
+    let got: i32 = rx <- recv$ <- unwrap$
+    assert_eq! got 42
+    println! "{got}"

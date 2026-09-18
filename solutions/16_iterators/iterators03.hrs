@@ -1,0 +1,7 @@
+fn main$:
+    let words = ["apple", "banana", "cherry"]
+    let caps: Vec<String> =
+        words <- iter$
+              <- map (|w| w <- to_uppercase$)
+              <- collect$
+    println! "{caps:?}"

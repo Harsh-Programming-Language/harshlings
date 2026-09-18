@@ -1,0 +1,17 @@
+// layout03
+//
+// Applying a function to nothing is written with `$`, never with `()`:
+// `()` is a value — the unit — and only ever that. Two calls here are
+// spelled the Rust way.
+//
+// Run `hrs run -- hint layout03` for a hint.
+
+// I AM NOT DONE
+
+fn answer$ -> i32:
+    42
+
+fn main$:
+    let a = answer()
+    let s = String.new()
+    println! "{a} {s:?}"

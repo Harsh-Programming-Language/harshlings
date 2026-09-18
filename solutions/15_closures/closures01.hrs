@@ -1,0 +1,5 @@
+fn main$:
+    let describe = |n: i32|:
+        let doubled = n * 2
+        format! "{n} doubled is {doubled}"
+    println! "{}" (describe 21)

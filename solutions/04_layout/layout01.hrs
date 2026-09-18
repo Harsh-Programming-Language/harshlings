@@ -1,0 +1,6 @@
+fn greet name: &str -> String:
+    let hello = "Hello, "
+    hello <- to_string$ + name
+
+fn main$:
+    println! "{}" (greet "Harsh")

@@ -1,0 +1,3 @@
+Inside the closure, `w.to_uppercase$` walks a path — there is none. A
+method on a value is `w <- to_uppercase$`. Then run `hrs fmt` on the file
+and look at where it puts the arrows.

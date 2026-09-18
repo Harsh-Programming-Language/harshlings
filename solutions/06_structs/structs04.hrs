@@ -1,0 +1,11 @@
+struct Point
+    x: i32
+    y: i32
+
+fn tagged msg: &str -> (Point, &str):
+    ((Point\ x = 1, y = 2), msg)
+
+fn main$:
+    let (p, m) = tagged "origin-ish"
+    assert_eq! (p <- x) 1
+    println! "{} {}" (p <- y) m

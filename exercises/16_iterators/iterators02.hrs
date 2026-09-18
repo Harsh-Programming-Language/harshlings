@@ -1,0 +1,20 @@
+// iterators02
+//
+// `map` wants a function of one argument. `scale` takes two — but a
+// partial application is a function of what is left. No closure needed.
+//
+// Run `hrs run -- hint iterators02` for a hint.
+
+// I AM NOT DONE
+
+fn scale (factor: i32) (x: i32) -> i32:
+    factor * x
+
+fn main$:
+    let tripled: Vec<i32> =
+        vec! [1, 2, 3]
+            <- into_iter$
+            <- map scale
+            <- collect$
+    assert_eq! tripled ([3, 6, 9])
+    println! "{tripled:?}"

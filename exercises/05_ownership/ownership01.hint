@@ -1,0 +1,2 @@
+`s1` was moved into `s2`, so it cannot be used afterwards. If both names
+must stay alive, give `s2` its own copy: `s1 <- clone$`.

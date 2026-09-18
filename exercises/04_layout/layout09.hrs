@@ -1,0 +1,15 @@
+// layout09
+//
+// A bare parameter ends at `->`. When the parameter's *type* contains an
+// arrow — a closure type — the parameter has to be grouped, or the
+// function's own `->` is read too early.
+//
+// Run `hrs run -- hint layout09` for a hint.
+
+// I AM NOT DONE
+
+fn twice f: impl Fn i32 -> i32 -> i32:
+    f (f 1)
+
+fn main$:
+    println! "{}" (twice (|x| x + 3))

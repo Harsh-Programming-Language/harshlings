@@ -1,0 +1,7 @@
+image: rust:latest
+
+verify:
+  script:
+    - cargo install harsh-lang
+    - hrs build
+    - python3 verify.py

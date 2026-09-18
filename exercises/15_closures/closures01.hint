@@ -1,0 +1,2 @@
+`|n: i32|:` ends the line; the two statements go beneath it, one level in.
+(Braces on one line also work: `|n: i32| { let d = n * 2; format! .. }`.)

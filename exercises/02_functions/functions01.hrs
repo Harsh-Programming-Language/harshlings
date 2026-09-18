@@ -1,0 +1,16 @@
+// functions01
+//
+// A function is applied by writing its arguments after its name, with spaces
+// between them: `add 2 3`. Fill in the call so that the assertion holds.
+//
+// Run `hrs run -- hint functions01` for a hint.
+
+// I AM NOT DONE
+
+fn add (a: i32) (b: i32) -> i32:
+    a + b
+
+fn main$:
+    let total = add 3
+    assert_eq! total 7
+    println! "total is {total}"

@@ -1,0 +1,4 @@
+Three spellings to fix: `#[cfg test]` (an attribute applies by
+juxtaposition), `mod tests:` with the body indented (a block over several
+lines is `:`, never braces), and `assert_eq! (add 2 2) 4` — a macro applies
+like a function, and `add 2 2` is one argument once it is in parentheses.

@@ -1,0 +1,2 @@
+`double n + 1` is `(double n) + 1` — the application binds tighter than `+`.
+To pass the sum as the argument, isolate it: `double (n + 1)`.

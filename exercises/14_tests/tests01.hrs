@@ -1,0 +1,25 @@
+// tests01
+//
+// A test is a function under `#[test]` in a `#[cfg test]` module, and
+// `assert_eq!` applies like any macro. The attribute and the module header
+// here are spelled the Rust way, and the assertion too.
+//
+// Run `hrs run -- hint tests01` for a hint.
+
+// I AM NOT DONE
+
+fn add (a: i32) (b: i32) -> i32:
+    a + b
+
+fn main$:
+    assert_eq!(add(2, 2), 4)
+    println! "{}" (add 2 2)
+
+#[cfg(test)]
+mod tests {
+    use super.*
+
+    #[test]
+    fn adds$:
+        assert_eq! (add 2 2) 4
+}

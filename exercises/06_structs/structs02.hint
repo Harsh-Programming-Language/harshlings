@@ -1,0 +1,2 @@
+Fields are reached with the arrow: `self <- w * self <- h`. The arrow
+binds tighter than `*`, so no parentheses are needed.

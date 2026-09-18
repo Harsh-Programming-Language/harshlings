@@ -1,0 +1,5 @@
+    ($x:expr) => do:
+        $x * 2
+
+The transcriber is a block, so the arm opens one — `=> do:` — with the
+body beneath.

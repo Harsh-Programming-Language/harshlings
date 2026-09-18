@@ -1,0 +1,3 @@
+`scale` takes two parameters; `2 3 4 |> scale` pipes three values in.
+Harsh counts, because `scale` is declared in this file. `2 3 |> scale` is
+`scale 2 3` — and `2 |> scale` alone would be a function waiting for `x`.

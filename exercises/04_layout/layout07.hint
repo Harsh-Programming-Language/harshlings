@@ -1,0 +1,3 @@
+An `if` without `else` is a statement, so its branch must be `()`. End the
+inline branch with `;` to discard `ping`'s value: `if n == 1: ping$;` —
+the same `;` that works on an indented block's last line.
