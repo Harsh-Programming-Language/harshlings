@@ -1,5 +1,5 @@
 fn describe x: Option<i32> -> String:
-    match x:
+    match x\
         Some n => format! "the number {n}"
         None => String.from "nothing"
 

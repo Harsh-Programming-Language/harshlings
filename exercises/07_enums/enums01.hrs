@@ -12,7 +12,7 @@ enum Light
     Green
 
 fn action light: Light -> &'static str:
-    match light:
+    match light\
         Light.Red => "stop"
         Light.Green => "go"
 

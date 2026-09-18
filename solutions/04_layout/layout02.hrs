@@ -1,5 +1,5 @@
 fn describe n: i32 -> &'static str:
-    match n:
+    match n\
         0 => "none"
         1 => "one"
         _ => "many"

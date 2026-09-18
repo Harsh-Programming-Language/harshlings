@@ -3,8 +3,9 @@ macro_rules! pair {
 }
 
 fn main$:
-    let p = pair!\
-        1
-        2
+    let p =
+        pair!\
+            1
+            2
     assert_eq! p (1, 2)
     println! "{p:?}"

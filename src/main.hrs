@@ -165,11 +165,11 @@ fn find_by_name name: &str -> Option<Exercise>:
     exercises$ <- into_iter$ <- find (|e| e <- name == name)
 
 fn hint name: &str:
-    match find_by_name name:
+    match find_by_name name\
         None => eprintln! "no exercise named {name}"
         Some ex =>
             let path = ex <- path <- with_extension "hint"
-            match fs.read_to_string (&path):
+            match fs.read_to_string (&path)\
                 Ok text => print! "{text}"
                 Err _ => println! "no hint for {name}"
 
@@ -191,7 +191,7 @@ fn watch$:
     let mut last = newest$
     loop:
         let next = exercises$ <- into_iter$ <- find (|e| !(is_done e))
-        match next:
+        match next\
             None =>
                 println! "\nEvery exercise is done. Well done!"
                 return
@@ -213,17 +213,17 @@ fn main$:
         args <- first$
              <- map (|s| s <- as_str$)
              <- unwrap_or "watch"
-    match cmd:
+    match cmd\
         "watch" => watch$
         "list" => list$
         "hint" =>
-            match args <- get 1:
+            match args <- get 1\
                 Some n => hint n
                 None => eprintln! "usage: hrs run -- hint NAME"
         "run" =>
-            match args <- get 1:
+            match args <- get 1\
                 Some n =>
-                    match find_by_name n:
+                    match find_by_name n\
                         Some ex => do: run_one (&ex);
                         None => eprintln! "no exercise named {n}"
                 None => eprintln! "usage: hrs run -- run NAME"

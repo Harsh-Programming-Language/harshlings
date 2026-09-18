@@ -1,5 +1,5 @@
 fn sign n: i32 -> &'static str:
-    match n:
+    match n\
         0 => "zero"
         x if x < 0 => "negative"
         _ => "positive"
