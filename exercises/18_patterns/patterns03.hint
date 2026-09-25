@@ -1,2 +1,0 @@
-`x if x < 0 => "negative"` — bind the value, then guard it; the arm sits
-between the `0` arm and the catch-all, since arms are tried in order.

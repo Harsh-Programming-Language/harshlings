@@ -1,3 +1,0 @@
-`pair!\` with the values beneath it: `\` opens a comma-separated block, and
-the newline does what the comma does inline (`pair!\ 1, 2` is the same call).
-`do:` would have written `;` between them, which this macro does not take.

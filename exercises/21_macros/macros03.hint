@@ -1,6 +1,0 @@
-    extern "C":
-        fn abs (x: i32) -> i32
-
-A block over several lines is `:` and indentation; braces only ever hold a
-block on one line. The parameter is grouped here: a bodiless signature ends
-at its `->`, so a bare parameter would swallow the return type.

@@ -1,7 +1,0 @@
-use std.rc.Rc
-
-fn main$:
-    let a = Rc.new (String.from "shared")
-    let b = Rc.clone (&a)
-    let c = Rc.clone (&a)
-    println! "{b} {c} {}" (Rc.strong_count (&c))

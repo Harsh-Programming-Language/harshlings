@@ -1,2 +1,0 @@
-`println! "{} since {}" name year` — no parentheses, no commas; the format
-string is the first argument. (Or `println! "{name} since {year}"`.)

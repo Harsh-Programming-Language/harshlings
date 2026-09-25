@@ -1,2 +1,0 @@
-`Cons i32 (Box<List>)` in the declaration — a generic payload type is
-isolated — and `Box.new (…)` around each tail when building.

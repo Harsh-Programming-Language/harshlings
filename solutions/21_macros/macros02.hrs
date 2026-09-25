@@ -1,6 +1,0 @@
-macro_rules~ twice
-    ($x:expr) => do:
-        $x * 2
-
-fn main$:
-    println! "{}" (twice~ 21)
