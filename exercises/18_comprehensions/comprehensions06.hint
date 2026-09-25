@@ -1,0 +1,3 @@
+A condition goes after the last `for` whose name it uses. The test uses `c`,
+so it belongs after `for c in b..20`. Under `for a`, it would run before `b`
+and `c` had been chosen.

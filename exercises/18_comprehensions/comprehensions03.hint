@@ -1,0 +1,2 @@
+Put the condition after the second `for`, where `y` exists: `for y in 1..4
+if y > x`. It can use `x` too, because `x` was bound before it.

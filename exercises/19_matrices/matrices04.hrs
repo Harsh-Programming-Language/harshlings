@@ -1,0 +1,23 @@
+// matrices04
+//
+// A line through data that does not lie on one: linear regression. Each row
+// of the design matrix is a 1 (for the intercept) and an x (for the slope);
+// with more rows than columns, `solve` gives the least-squares fit. These
+// points lie on y = 1 + 2x. Build the rows with a comprehension.
+//
+// Run `hrs run -- hint matrices04` for a hint.
+
+// I AM NOT DONE
+
+use hrs_std.Matrix
+
+fn main$:
+    // `f64` fixes the number type: without it Rust cannot tell which
+    // float `abs` is meant for below.
+    let xs: [f64; 4] = [0.0, 1.0, 2.0, 3.0]
+    let y = v~ [1.0, 3.0, 5.0, 7.0]
+    let design = Matrix.from_rows (list~ (vec! x) for x in xs)
+    let beta = design <- solve (&y)
+    assert! ((beta[0] - 1.0) <- abs$ < 1e-9)
+    assert! ((beta[1] - 2.0) <- abs$ < 1e-9)
+    println! "y = {:.1} + {:.1}x" beta[0] beta[1]

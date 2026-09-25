@@ -1,6 +1,6 @@
 [package]
 name = "harshlings"
-version = "0.1.0"
+version = "0.1.6"
 edition = "2021"
 description = "Small exercises to get you used to reading and writing Harsh"
 license = "MPL-2.0"

@@ -1,0 +1,18 @@
+// comprehensions06
+//
+// Every `for` makes one more name available, and a condition can use only the
+// names bound before it. This test needs `b` and `c`, but it is attached to
+// `for a`, where neither exists yet. Move it -- do not rewrite it.
+//
+// Run `hrs run -- hint comprehensions06` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let triples =
+        list~ (a, b, c)
+            for a in 1..20 if a * a + b * b == c * c
+            for b in a..20
+            for c in b..20
+    assert_eq! (triples[0]) (3, 4, 5)
+    println! "{triples:?}"

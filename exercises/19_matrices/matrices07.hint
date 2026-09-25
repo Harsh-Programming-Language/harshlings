@@ -1,0 +1,2 @@
+`half a` hands the whole matrix to a function that wants one number. Mark
+the function: `half<> a`. The last line does, twice, in a pipeline.

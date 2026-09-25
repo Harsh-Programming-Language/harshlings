@@ -1,0 +1,4 @@
+fn main$:
+    let cubes: Vec<i32> = (g~ x * x * x for x in 1..5) <- collect$
+    assert_eq! cubes (vec! 1 8 27 64)
+    println! "{cubes:?}"

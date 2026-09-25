@@ -1,0 +1,2 @@
+`rx <- recv$ <- unwrap$` — receive, then unwrap the `Result`. A chain of
+two links stays on its line.

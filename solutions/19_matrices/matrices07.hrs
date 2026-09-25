@@ -1,0 +1,8 @@
+fn half (x: f64) -> f64:
+    x / 2.0
+
+fn main$:
+    let a = m~ [2.0 4.0; 6.0 8.0]
+    let halved = half<> a
+    assert_eq! halved (m~ [1.0 2.0; 3.0 4.0])
+    println! "{}" (a |> half<> |> f64.sqrt<>)

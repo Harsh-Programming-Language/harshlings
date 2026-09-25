@@ -1,0 +1,18 @@
+// macros04 — Rust macros (!), declarative: calling one you wrote
+//
+// A macro that takes a list of values is applied like a function, one
+// argument per value. This call is written the way Rust writes it, with the
+// values in one parenthesised list.
+//
+// Run `hrs run -- hint macros04` for a hint.
+
+// I AM NOT DONE
+
+macro_rules! pair {
+    ( $a:expr, $b:expr ) => { ($a, $b) };
+}
+
+fn main$:
+    let p = pair! (1, 2)
+    assert_eq! p (1, 2)
+    println! "{p:?}"

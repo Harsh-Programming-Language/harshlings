@@ -1,0 +1,2 @@
+Multiplying by `swap` on the right exchanges the columns: the first column
+of the product is the second of `a`. So `expected` is `m~ [2 1; 4 3]`.

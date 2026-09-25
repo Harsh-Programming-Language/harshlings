@@ -1,0 +1,2 @@
+A map needs a key and a value: `dict~ w => (w <- len$) for w in words`. The
+value is isolated in parentheses because it is a chain.

@@ -1,0 +1,14 @@
+// comprehensions05
+//
+// `g~` is lazy: nothing runs until something asks for values. So it may read
+// an endless range, `1..`, as long as something stops asking -- `take` does.
+// Take the first three even squares from all the numbers from 1 upwards.
+//
+// Run `hrs run -- hint comprehensions05` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let first: Vec<u64> = (g~ n * n for n in 1.. if n % 2 == 0) <- take 2 <- collect$
+    assert_eq! first (vec! 4 16 36)
+    println! "{first:?}"

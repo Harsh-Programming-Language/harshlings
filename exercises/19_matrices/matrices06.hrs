@@ -1,0 +1,17 @@
+// matrices06
+//
+// `*` between two matrices is the matrix product. A dot before an operator
+// applies it element by element instead: `.*`, `.+`, `.-`, `./`. Each cost
+// here is one price times one quantity.
+//
+// Run `hrs run -- hint matrices06` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let price = m~ [2.0 3.0; 4.0 5.0]
+    let quantity = m~ [10.0 10.0; 1.0 2.0]
+    let cost = &price * &quantity
+    assert_eq! cost (m~ [20.0 30.0; 4.0 10.0])
+    // A number stretches to fit: every cost, plus one for the bag.
+    println! "{}" (&price .* &quantity .+ 1.0)

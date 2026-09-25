@@ -1,0 +1,4 @@
+fn main$:
+    let first: Vec<u64> = (g~ n * n for n in 1.. if n % 2 == 0) <- take 3 <- collect$
+    assert_eq! first (vec! 4 16 36)
+    println! "{first:?}"

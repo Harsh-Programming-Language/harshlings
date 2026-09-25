@@ -1,0 +1,2 @@
+`let b = Rc.clone (&a)` — a path (`Rc.clone`) applied to a borrowed
+argument, which is isolated because `&` is an operator.

@@ -1,0 +1,2 @@
+`&price * &quantity` multiplies rows by columns. Element by element is the
+dotted operator: `&price .* &quantity`. The last line already uses it.

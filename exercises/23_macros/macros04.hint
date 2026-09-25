@@ -1,0 +1,3 @@
+`pair!` wants two values (`$a:expr, $b:expr`): a list, so it is applied like
+any function, `pair! 1 2` -- Harsh writes the `pair!(1, 2)` of Rust without
+the parens and commas. A parenthesised list would be one argument.

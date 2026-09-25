@@ -1,0 +1,2 @@
+Each row needs two entries, the 1 and the x: `(vec! [1.0, x])`. With only
+`x`, there is no intercept to fit, and `beta` has one entry, not two.

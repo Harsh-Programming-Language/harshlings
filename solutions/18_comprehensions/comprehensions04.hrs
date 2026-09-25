@@ -1,0 +1,5 @@
+fn main$:
+    let words = ["pipe", "matrix", "g"]
+    let lengths = dict~ w => (w <- len$) for w in words
+    assert_eq! lengths["matrix"] 6
+    println! "{}" lengths["pipe"]

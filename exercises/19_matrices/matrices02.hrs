@@ -1,0 +1,15 @@
+// matrices02
+//
+// `*` between two matrices is the matrix product; between a number and a
+// matrix it scales. `&a * &b` borrows both. What is the product here?
+//
+// Run `hrs run -- hint matrices02` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let a = m~ [1 2; 3 4]
+    let swap = m~ [0 1; 1 0]
+    let expected = m~ [1 2; 3 4]
+    assert_eq! (&a * &swap) expected
+    println! "{}" (&a * &swap)

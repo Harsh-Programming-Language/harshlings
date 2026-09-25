@@ -1,0 +1,19 @@
+// box01
+//
+// A recursive type has no size until one of its parts lives on the heap.
+// Put the tail of the list in a `Box`.
+//
+// Run `hrs run -- hint box01` for a hint.
+
+// I AM NOT DONE
+
+enum List
+    Cons i32 List
+    Nil
+
+use List.(Cons, Nil)
+
+fn main$:
+    let list = Cons 1 (Cons 2 Nil)
+    if let Cons head _ = list:
+        println! "{head}"

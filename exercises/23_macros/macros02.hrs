@@ -1,0 +1,15 @@
+// macros02 — Harsh macros (~), declarative: defining one
+//
+// A `macro_rules~` definition: in a matcher, a metavariable is written in
+// its parentheses, `($x:expr)`, inside the arm's own; a transcriber is a
+// block. This one is missing its transcriber's `do:`.
+//
+// Run `hrs run -- hint macros02` for a hint.
+
+// I AM NOT DONE
+
+macro_rules~ twice
+    (($x:expr)) => $x * 2
+
+fn main$:
+    println! "{}" (twice~ 21)

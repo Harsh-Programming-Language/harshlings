@@ -1,0 +1,13 @@
+// comprehensions01
+//
+// `g~ value for x in xs` builds a sequence: the value first, then where it
+// comes from. Make `cubes` the cube of every number from 1 to 4.
+//
+// Run `hrs run -- hint comprehensions01` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let cubes: Vec<i32> = (g~ x for x in 1..5) <- collect$
+    assert_eq! cubes (vec! 1 8 27 64)
+    println! "{cubes:?}"

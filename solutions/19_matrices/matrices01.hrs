@@ -1,0 +1,4 @@
+fn main$:
+    let a = m~ [1 2 3; 4 5 6]
+    assert_eq! (a <- size$) (2, 3)
+    println! "{a}"

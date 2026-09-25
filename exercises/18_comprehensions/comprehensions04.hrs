@@ -1,0 +1,14 @@
+// comprehensions04
+//
+// `dict~ key => value for …` collects into a HashMap. Map each word to its
+// length.
+//
+// Run `hrs run -- hint comprehensions04` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let words = ["pipe", "matrix", "g"]
+    let lengths = dict~ w for w in words
+    assert_eq! lengths["matrix"] 6
+    println! "{}" lengths["pipe"]

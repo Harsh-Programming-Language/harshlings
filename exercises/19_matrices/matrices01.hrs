@@ -1,0 +1,16 @@
+// matrices01
+//
+// `m~` writes a matrix as Julia does: spaces between entries, `;` between
+// rows. This one should be 2 rows by 3 columns.
+//
+// Matrices need Harsh's standard library, the `hrs_std` crate; Harshlings
+// builds these exercises with it.
+//
+// Run `hrs run -- hint matrices01` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let a = m~ [1 2; 3 4; 5 6]
+    assert_eq! (a <- size$) (2, 3)
+    println! "{a}"

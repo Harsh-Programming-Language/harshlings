@@ -62,6 +62,8 @@ fn is_done ex: &Exercise -> bool:
 // Transpile, compile and run one exercise. `hrs check`'s job, done here so
 // that a learner needs nothing but `hrs` and `rustc` on the PATH.
 fn attempt ex: &Exercise -> bool:
+    if needs_std (&ex <- path):
+        return attempt_cargo ex
     let out_dir = Path.new "target" <- join "harshlings"
     fs.create_dir_all (&out_dir) <- unwrap$
     let rs = out_dir <- join (format! "{}.rs" (ex <- name))
@@ -137,6 +139,42 @@ fn attempt ex: &Exercise -> bool:
                <- to_string_lossy$
                <- to_string$
         eprint! "{}" (err <- replace (&from) (&to))
+        return false
+    true
+
+// The matrix exercises use `m~` and `v~`, whose types are in Harsh's standard
+// library, the `hrs_std` crate -- so they are built as a small Harsh project
+// rather than by rustc alone, and by `hrs` itself: `hrs_std` ships inside
+// `hrs`, in Harsh's standard distribution, and `hrs` maps rustc's errors and
+// a panic's place onto the exercise's lines. One scratch project serves them
+// all, so nalgebra is compiled once.
+fn needs_std path: &Path -> bool:
+    let src = fs.read_to_string path <- unwrap_or_default$
+    (src <- contains "m~") || (src <- contains "v~") || (src <- contains "hrs_std")
+
+fn attempt_cargo ex: &Exercise -> bool:
+    let proj = Path.new "target" <- join "harshlings" <- join "cargo"
+    fs.create_dir_all (proj <- join "src") <- unwrap$
+    let manifest = "[package]\nname = \"exercise\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n[[bin]]\nname = \"exercise\"\npath = \"target/hrs/main.rs\"\n\n[dependencies]\nhrs_std = \"0.1\"\n"
+    fs.write (proj <- join "Cargo.toml") manifest <- unwrap$
+    let scratch = proj <- join "src" <- join "main.hrs"
+    fs.copy (&ex <- path) (&scratch) <- unwrap$
+    let r = Command.new "hrs"
+        <- args (["run", "--quiet"])
+        <- current_dir (&proj)
+        <- output$
+        <- expect "hrs is not on your PATH: run `cargo install harsh-lang` first"
+    print! "{}" (String.from_utf8_lossy (&r <- stdout))
+    if !(r <- status <- success$):
+        // The messages name the scratch copy; put the exercise's name back.
+        let here = std.env.current_dir$ <- unwrap$
+        let absolute = here <- join (&scratch) <- to_string_lossy$ <- to_string$
+        let relative = "src/main.hrs"
+        let to = ex <- path <- to_string_lossy$ <- to_string$
+        let err = String.from_utf8_lossy (&r <- stderr) <- to_string$
+        for line in err <- lines$:
+            if !(line <- starts_with "hrs: "):
+                eprintln! "{}" (line <- replace (&absolute) (&to) <- replace relative (&to))
         return false
     true
 

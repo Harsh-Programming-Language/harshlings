@@ -1,0 +1,2 @@
+The value comes first: `g~ x * x * x for x in 1..5`. The call is in
+parentheses because the result is chained on with `<- collect$`.

@@ -1,0 +1,15 @@
+// matrices03
+//
+// `a <- solve (&b)` is Julia's `a \ b`: the `x` for which `a * x` equals `b`.
+// Solve  x + y = 3  and  x - y = 1.
+//
+// Run `hrs run -- hint matrices03` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let a = m~ [1.0 1.0; 1.0 1.0]
+    let b = v~ [3.0, 1.0]
+    let x = a <- solve (&b)
+    assert_eq! (x[0], x[1]) (2.0, 1.0)
+    println! "x = {}, y = {}" x[0] x[1]

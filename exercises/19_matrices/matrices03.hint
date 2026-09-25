@@ -1,0 +1,3 @@
+Each row of `a` holds one equation's coefficients. The second equation is
+x - y = 1, so its row is `1.0 -1.0`. As written, both rows are the same
+equation, and the system has no single answer: that is the SingularException.

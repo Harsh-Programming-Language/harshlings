@@ -1,0 +1,2 @@
+`return None` in the `else:` block. The compiler says the block must
+diverge: it cannot hand `c` a value, only end the function.

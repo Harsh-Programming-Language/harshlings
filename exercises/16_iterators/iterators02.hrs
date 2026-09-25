@@ -12,7 +12,7 @@ fn scale (factor: i32) (x: i32) -> i32:
 
 fn main$:
     let tripled: Vec<i32> =
-        vec! [1, 2, 3]
+        vec! 1 2 3
             <- into_iter$
             <- map scale
             <- collect$

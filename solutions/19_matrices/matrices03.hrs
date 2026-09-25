@@ -1,0 +1,6 @@
+fn main$:
+    let a = m~ [1.0 1.0; 1.0 -1.0]
+    let b = v~ [3.0, 1.0]
+    let x = a <- solve (&b)
+    assert_eq! (x[0], x[1]) (2.0, 1.0)
+    println! "x = {}, y = {}" x[0] x[1]

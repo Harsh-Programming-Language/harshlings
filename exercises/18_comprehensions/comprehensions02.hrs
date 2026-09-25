@@ -1,0 +1,13 @@
+// comprehensions02
+//
+// An `if` after a `for` keeps only the values that satisfy it, and there may
+// be several. Keep the numbers below 40 that are multiples of 3 and of 4.
+//
+// Run `hrs run -- hint comprehensions02` for a hint.
+
+// I AM NOT DONE
+
+fn main$:
+    let both = list~ n for n in 1..40 if n % 3 == 0
+    assert_eq! both (vec! 12 24 36)
+    println! "{both:?}"

@@ -1,0 +1,8 @@
+fn main$:
+    let triples =
+        list~ (a, b, c)
+            for a in 1..20
+            for b in a..20
+            for c in b..20 if a * a + b * b == c * c
+    assert_eq! (triples[0]) (3, 4, 5)
+    println! "{triples:?}"
