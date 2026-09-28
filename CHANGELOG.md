@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.7 — 2026-09-27
+
+- **`matrices05`**: a view is now `a <- view (1..) (1..)`, Julia's `view(a, 2:3, 2:3)` -- Harsh 0.1.37 (`hrs_std` 0.1.3) retired the index form `&a[1.., 1..]`, whose views were undefined behaviour under Miri. Needs `harsh-lang` 0.1.37.
+
 ## 0.1.6 — 2026-09-24
 
 - **Macros, by who wrote them** (the user's architecture): Harsh macros (~), Rust macros (!), Rust DSLs (!), Harsh DSLs (~), each with its declarative and procedural kinds. Each `23_macros` exercise names its part; `macros03` is `extern` blocks, not a macro. The README maps the exercises onto it, and says why procedural macros are taught in the Book rather than here.
